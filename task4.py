@@ -5,15 +5,19 @@ class Employee:
         self.first_name = first_name
         self.second_name = second_name
         self.gender = gender
+        self.remaining_vacation_days = self.vacation_days
+
+    def consume_vacation(self, lost):
+        self.remaining_vacation_days = self.remaining_vacation_days - lost
+        return self.remaining_vacation_days
+
+    def get_vacation_details(self):
+        return (f'Остаток отпускных дней: {self.remaining_vacation_days}.')
 
 
-employee1 = Employee(first_name='Robert', second_name='Kruzo', gender='M')
-employee2 = Employee(first_name='Darya', second_name='Melihan', gender='F')
+employee = Employee('Роберт', 'Крузо', 'м')
+employee.consume_vacation(7)
+print(employee.get_vacation_details())
 
-# Допишите код для вывода информации о сотрудниках.
-print(f'Имя: {employee1.first_name}, Фамилия: {employee1.second_name},\
- Пол: {employee1.gender}, Отпускных дней в году:\
- {employee1.vacation_days}.')
-print(f'Имя: {employee2.first_name}, Фамилия: {employee2.second_name},\
- Пол: {employee2.gender}, Отпускных дней в году:\
- {employee2.vacation_days}.')
+
+

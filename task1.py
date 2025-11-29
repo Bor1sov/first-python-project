@@ -1,12 +1,6 @@
-def add(x, y):
-    return x + y
+def print_name(string):
+    for i in range(len(string)):
+        print(list(string)[i])
 
 
-x = 10
-y = 5
-print("Сумма чисел: ", add(x, y))
-
-
-my_name: str = 'Egor'
-
-print(my_name)
+print_name('Egor')
